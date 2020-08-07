@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using  UnobtrusiveDemo.Validator;
 
 namespace UnobtrusiveDemo.ViewModels.Home
 {
@@ -25,5 +26,8 @@ namespace UnobtrusiveDemo.ViewModels.Home
         [Required(ErrorMessage = "Please enter an email address.")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string EmailAddress { get; set; }
+
+        [MaxFileSize(4 * 1024 * 1024, ErrorMessage = "Maximum allowed file size is 4 Mb")]
+        public HttpPostedFileBase File { get; set; }
     }
 }

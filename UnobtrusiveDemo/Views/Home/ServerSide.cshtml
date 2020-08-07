@@ -30,6 +30,10 @@
             @Html.ValidationMessageFor(x => x.EmailAddress)
         </div>
         <div>
+            @Html.TextBoxFor(x => x.File, new { type = "file" })
+            @Html.ValidationMessageFor(x => x.File)
+        </div>
+        <div>
             <input type="submit" value="Save" />
         </div>
     </div>
